@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aymane Khallouk - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#accueil">ACCUEIL</a></li>
+                <li><a href="#apropos">À PROPOS</a></li>
+                <li><a href="#parcours">PARCOURS</a></li>
+                <li><a href="#competences">COMPÉTENCES</a></li>
+                <li><a href="#projets">PROJETS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>PORTFO<span class="filled">LIO</span></h1>
+            <h2>Aymane Khallouk - Ingénierie Cybersécurité</h2>
+            <p>Passionné par la sécurité informatique et la protection des systèmes d'information.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Me Contacter</a>
+                <a href="#projets" class="cta-button secondary">Découvrir mes Projets</a>
+            </div>
+        </div>
+        <div class="profile-container">
+            <img src="profile.jpg" alt="Aymane Khallouk">
+        </div>
+    </section>
+
+    <section id="apropos" class="about">
+        <h2>À Propos de Moi</h2>
+        <div class="about-content">
+            <p>Je suis Aymane Khallouk, étudiant en première année d'ingénierie en cybersécurité à l'INPT. Passionné par la sécurité informatique et la protection des systèmes d'information, je m'efforce de développer mes compétences dans ce domaine en constante évolution.</p>
+            <p>Mon objectif est de contribuer à la création d'un environnement numérique plus sûr et de participer activement à la protection des infrastructures critiques.</p>
+        </div>
+    </section>
+
+    <section id="parcours" class="education">
+        <h2>Parcours</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Institut National des Postes et Télécommunications (INPT)</h3>
+                    <p class="timeline-date">2025 - Présent</p>
+                    <p>Formation en Ingénierie Cybersécurité</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Classes Préparatoires aux Grandes Écoles - Reda Slaoui Agadir</h3>
+                    <p class="timeline-date">2022 - 2024</p>
+                    <p>Filière MP</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Baccalauréat</h3>
+                    <p class="timeline-date">2022</p>
+                    <p>Sciences Mathématiques - Mention Très Bien</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="skills">
+        <h2>Compétences</h2>
+        <div class="grid-section">
+            <div class="card">
+                <i class="icon fas fa-shield-alt"></i>
+                <h3>Cybersécurité</h3>
+                <p>Protection & Analyse</p>
+            </div>
+            <div class="card">
+                <i class="icon fas fa-code"></i>
+                <h3>Développement</h3>
+                <p>Solutions innovantes</p>
+            </div>
+            <div class="card">
+                <i class="icon fas fa-users"></i>
+                <h3>Leadership</h3>
+                <p>Engagement associatif</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="projects">
+        <h2>Projets</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Détection de Ransomwares avec Augmentation de Dataset par IA</h3>
+                <p>Projet de groupe - Solution d'augmentation de données</p>
+                <p>Développement d'une solution innovante utilisant des algorithmes génératifs (CTGAN, TVAE) pour améliorer la détection de ransomwares en augmentant la taille et la qualité des datasets d'entraînement.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>CTGAN</span>
+                    <span>TVAE</span>
+                    <span>Machine Learning</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Plateforme de Partage Sécurisé de Fichiers</h3>
+                <p>PFA (Projet de Fin d'Année) - Réalisé en groupe</p>
+                <p>Développement d'une plateforme sécurisée permettant le partage de fichiers.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>Sécurité Web</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>TIPE : Rendu par Lancer de Rayons</h3>
+                <p>Étude et implémentation du rendu par lancer de rayons (ray tracing) dans les jeux vidéo, incluant l'optimisation des performances et la simulation des effets lumineux réalistes.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Physique</span>
+                    <span>Algorithmique</span>
+                    <span>Simulation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <div class="contact-content">
+            <form id="contact-form">
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+            <div class="contact-info">
+                <h3>Me Contacter Directement</h3>
+                <div class="social-links">
+                    <a href="https://github.com/aymane10101" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/ayman-khallouk-1a6ba3321/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="mailto:aymanmita06@gmail.com"><i class="fas fa-envelope"></i> aymanmita06@gmail.com</a>
+                    <a href="tel:+212770286184"><i class="fas fa-phone"></i> +212770286184</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 

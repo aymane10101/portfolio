@@ -1,0 +1,688 @@
+/* Variables */
+:root {
+    --primary-bg: #1A202C; /* Very dark blue-gray background */
+    --text-color: #E2E8F0; /* Light text for contrast */
+    --light-text: #A0AEC0; /* Slightly muted text for paragraphs */
+    --header-bg: #1A202C; /* Same as primary-bg for seamless header */
+    --card-bg: #2D3748; /* Darker card background */
+    --border-color: #4A5568; /* Subtle border color */
+    --accent-blue: #61DAFB; /* Light blue accent for some icons/borders */
+    --accent-green: #68D391; /* Green accent for specific sections */
+    --accent-orange: #F6AD55; /* Orange accent for other elements */
+    --button-bg: #4A5568; /* Muted button background */
+    --button-hover: #5A6A7D; /* Slightly lighter button on hover */
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--primary-bg);
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--header-bg);
+    padding: 1.5rem 6rem;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.logo i {
+    color: var(--accent-blue);
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+nav a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* To position content and photo side by side */
+    padding: 8rem 6rem;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 60%; /* Adjust content width to make space for photo */
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.hero h1 span {
+    color: var(--accent-blue);
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: var(--accent-blue);
+    color: var(--primary-bg);
+}
+
+.cta-button:hover {
+    background-color: #51b8e4; /* Slightly darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--light-text);
+    border: 1px solid var(--light-text);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--light-text);
+    color: var(--primary-bg);
+    border-color: var(--light-text);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px; /* Slightly rounded corners for image */
+    overflow: hidden;
+    border: 3px solid var(--accent-blue); /* Blue border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    margin-left: 2rem; /* Space from content */
+    position: relative;
+    z-index: 1;
+}
+
+.profile-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* General Section Styling */
+section {
+    padding: 6rem 6rem;
+    background-color: var(--primary-bg);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* Card Styles (for skills and new activity sections) */
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card .icon {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent-blue); /* Default icon color */
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 0.6rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--light-text);
+}
+
+/* Specific card variations */
+.activity-card.green .icon {
+    color: var(--accent-green);
+}
+
+.activity-card.green {
+    background-color: #2F4F4F; /* Darker green shade for this card */
+    border-color: var(--accent-green);
+}
+
+.activity-card.orange .icon {
+    color: var(--accent-orange);
+}
+
+.activity-card.orange {
+    background-color: #4A3C2F; /* Darker orange shade for this card */
+    border-color: var(--accent-orange);
+}
+
+/* About section */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--light-text);
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Education section (timeline) */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: var(--border-color);
+    border-radius: 1px;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-content {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: calc(50% - 25px);
+    margin-left: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-blue);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-blue);
+    border-radius: 50%;
+    border: 4px solid var(--primary-bg);
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    left: -42px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    right: -42px;
+}
+
+.timeline-date {
+    color: var(--light-text);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.timeline-content h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+/* Project Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-card p {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.project-tech {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.project-tech span {
+    background-color: var(--button-bg); /* Use a subtle background */
+    color: var(--light-text);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.project-tech span:hover {
+    background-color: var(--button-hover);
+    border-color: var(--accent-blue); /* Accent on hover */
+    color: var(--text-color);
+}
+
+/* Contact Section */
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2.5rem;
+    align-items: start;
+}
+
+#contact-form {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 1.1rem;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: var(--light-text);
+    opacity: 0.7;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.15);
+}
+
+#contact-form button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    padding: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info h3 {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.social-links a {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a i {
+    width: 25px;
+    text-align: center;
+    color: var(--accent-blue);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--text-color);
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    header, .hero, section {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    header,
+    .hero,
+    section {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    .hero {
+        flex-direction: column-reverse; /* Image on top, content below */
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-container {
+        margin-left: 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .about,
+    .education,
+    .skills,
+    .projects,
+    .contact {
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        margin: 3rem auto;
+        max-width: 1200px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        padding: 3rem;
+        border: 1px solid var(--border-color);
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start;
+    }
+
+    .timeline-content {
+        width: calc(100% - 40px);
+        margin-left: 40px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-right: 0;
+        margin-left: 40px;
+    }
+
+    .timeline-content::before {
+        left: -15px !important;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    header,
+    .hero,
+    section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    nav ul {
+        display: none; /* Hide nav for small screens, might add a hamburger menu later */
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .card,
+    .timeline-content,
+    #contact-form,
+    .contact-info {
+        padding: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .card h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.4rem;
+    }
+
+    #contact-form input,
+    #contact-form textarea,
+    #contact-form button {
+        padding: 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+    }
+
+    .profile-container {
+        width: 180px;
+        height: 180px;
+    }
+} 
